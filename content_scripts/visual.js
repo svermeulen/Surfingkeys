@@ -68,7 +68,10 @@ function createVisual() {
     });
 
     self.mappings = new Trie();
-    self.map_node = self.mappings;
+    // Define a seperate thing to make merge conflicts easier
+    self.svkjMappings = new Trie();
+    self.map_node = self.svkjMappings;
+
     self.repeats = "";
     self.mappings.add("l", {
         annotation: "forward character",
@@ -849,5 +852,8 @@ function createVisual() {
         cursor.setAttribute('style', _style.cursor || '');
         mark_template.setAttribute('style', _style.marks || '');
     };
+
+    self.mappings = self.svkjMappings;
+
     return self;
 }

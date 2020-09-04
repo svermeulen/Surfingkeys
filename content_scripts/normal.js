@@ -1071,7 +1071,7 @@ function createNormal() {
         }
     });
 
-    self.svkjMappings.add("t", {
+    self.svkjMappings.add("T", {
         annotation: "Toggle visual mode",
         feature_group: 9,
         repeatIgnore: true,
@@ -1079,6 +1079,7 @@ function createNormal() {
             Visual.toggle();
         }
     });
+
     self.mappings.add("cq", {
         annotation: "Query word with Hints",
         feature_group: 7,

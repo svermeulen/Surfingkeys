@@ -344,7 +344,7 @@ var Omnibar = (function() {
             evt.preventDefault();
         } else if (evt.keyCode === KeyboardUtils.keyCodes.enter) {
             handler.activeTab = !evt.ctrlKey;
-            handler.tabbed = Omnibar.tabbed ^ evt.shiftKey;
+            handler.tabbed = Omnibar.tabbed ^ !evt.shiftKey;
             handler.onEnter() && Front.hidePopup();
         } else if (evt.keyCode === KeyboardUtils.keyCodes.space) {
             self.expandAlias(self.input.value, '') && evt.preventDefault();

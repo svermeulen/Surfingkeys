@@ -30,7 +30,10 @@ function createInsert() {
     }
 
     self.mappings = new Trie();
-    self.map_node = self.mappings;
+    // Define a seperate thing to make merge conflicts easier
+    self.svkjMappings = new Trie();
+    self.map_node = self.svkjMappings;
+
     self.mappings.add(KeyboardUtils.encodeKeystroke("<Ctrl-e>"), {
         annotation: "Move the cursor to the end of the line",
         feature_group: 15,
@@ -420,6 +423,8 @@ function createInsert() {
             moveCusorEOL();
         }
     };
+
+    self.mappings = self.svkjMappings;
 
     return self;
 }
