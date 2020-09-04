@@ -407,7 +407,7 @@ function _initModules() {
     window.Hints = createHints();
     window.Clipboard = createClipboard();
     window.Front = createFront();
-    createDefaultMappings();
+    // createDefaultMappings();
     window.pdfGuard = new Promise(function (resolve, reject) {
         RUNTIME('getSettings', null, function(response) {
             var rs = response.settings;

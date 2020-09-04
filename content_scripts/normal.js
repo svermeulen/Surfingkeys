@@ -481,7 +481,9 @@ function createNormal() {
     };
 
     self.mappings = new Trie();
-    self.map_node = self.mappings;
+    // Define a seperate thing to make merge conflicts easier
+    self.svkjMappings = new Trie();
+    self.map_node = self.svkjMappings;
 
     self.repeats = "";
     var keyHeld = 0;
@@ -976,49 +978,49 @@ function createNormal() {
             }
         }
     });
-    self.mappings.add("e", {
+    self.svkjMappings.add("o", {
         annotation: "Scroll half page up",
         feature_group: 2,
         repeatIgnore: true,
         code: self.scroll.bind(self, "pageUp")
     });
-    self.mappings.add("d", {
+    self.svkjMappings.add("i", {
         annotation: "Scroll half page down",
         feature_group: 2,
         repeatIgnore: true,
         code: self.scroll.bind(self, "pageDown")
     });
-    self.mappings.add("gg", {
+    self.svkjMappings.add("D", {
         annotation: "Scroll to the top of the page",
         feature_group: 2,
         repeatIgnore: true,
         code: self.scroll.bind(self, "top")
     });
-    self.mappings.add("G", {
+    self.svkjMappings.add("V", {
         annotation: "Scroll to the bottom of the page",
         feature_group: 2,
         repeatIgnore: true,
         code: self.scroll.bind(self, "bottom")
     });
-    self.mappings.add("j", {
+    self.svkjMappings.add("j", {
         annotation: "Scroll down",
         feature_group: 2,
         repeatIgnore: true,
         code: self.scroll.bind(self, "down")
     });
-    self.mappings.add("k", {
+    self.svkjMappings.add(";", {
         annotation: "Scroll up",
         feature_group: 2,
         repeatIgnore: true,
         code: self.scroll.bind(self, "up")
     });
-    self.mappings.add("h", {
+    self.svkjMappings.add("h", {
         annotation: "Scroll left",
         feature_group: 2,
         repeatIgnore: true,
         code: self.scroll.bind(self, "left")
     });
-    self.mappings.add("l", {
+    self.svkjMappings.add("l", {
         annotation: "Scroll right",
         feature_group: 2,
         repeatIgnore: true,
@@ -1051,7 +1053,7 @@ function createNormal() {
         }
     });
 
-    self.mappings.add("f", {
+    self.svkjMappings.add("f", {
         annotation: "Open a link, press SHIFT to flip overlapped hints, hold SPACE to hide hints",
         feature_group: 1,
         repeatIgnore: true,
@@ -1069,7 +1071,7 @@ function createNormal() {
         }
     });
 
-    self.mappings.add("v", {
+    self.svkjMappings.add("t", {
         annotation: "Toggle visual mode",
         feature_group: 9,
         repeatIgnore: true,
@@ -1085,7 +1087,7 @@ function createNormal() {
             Visual.toggle("q");
         }
     });
-    self.mappings.add("/", {
+    self.svkjMappings.add("/", {
         annotation: "Find in current page",
         feature_group: 9,
         repeatIgnore: true,
@@ -1093,7 +1095,7 @@ function createNormal() {
             Front.openFinder();
         }
     });
-    self.mappings.add("n", {
+    self.svkjMappings.add("n", {
         annotation: "Next found text",
         feature_group: 9,
         repeatIgnore: true,
@@ -1101,7 +1103,7 @@ function createNormal() {
             Visual.next(false);
         }
     });
-    self.mappings.add("N", {
+    self.svkjMappings.add("'", {
         annotation: "Previous found text",
         feature_group: 9,
         repeatIgnore: true,
@@ -1163,6 +1165,8 @@ function createNormal() {
             delete n.smoothScrollBy;
         });
     };
+
+    self.mappings = self.svkjMappings;
 
     return self;
 }
