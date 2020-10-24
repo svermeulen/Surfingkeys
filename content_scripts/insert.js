@@ -139,7 +139,7 @@ function createInsert() {
             }
         }
     });
-    self.mappings.add(KeyboardUtils.encodeKeystroke("<Esc>"), {
+    self.svkjMappings.add(KeyboardUtils.encodeKeystroke("<Esc>"), {
         annotation: "Exit insert mode",
         feature_group: 15,
         stopPropagation: function(key) {

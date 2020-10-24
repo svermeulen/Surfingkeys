@@ -73,67 +73,67 @@ function createVisual() {
     self.map_node = self.svkjMappings;
 
     self.repeats = "";
-    self.mappings.add("l", {
+    self.svkjMappings.add("l", {
         annotation: "forward character",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("h", {
+    self.svkjMappings.add("h", {
         annotation: "backward character",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("j", {
+    self.svkjMappings.add("j", {
         annotation: "forward line",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("k", {
+    self.svkjMappings.add("k", {
         annotation: "backward line",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("w", {
+    self.svkjMappings.add("e", {
         annotation: "forward word",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("e", {
+    self.svkjMappings.add("w", {
         annotation: "forward word",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("b", {
+    self.svkjMappings.add("b", {
         annotation: "backward word",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add(")", {
+    self.svkjMappings.add(")", {
         annotation: "forward sentence",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("(", {
+    self.svkjMappings.add("(", {
         annotation: "backward sentence",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("}", {
+    self.svkjMappings.add("}", {
         annotation: "forward paragraphboundary",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("{", {
+    self.svkjMappings.add("{", {
         annotation: "backward paragraphboundary",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("0", {
+    self.svkjMappings.add("0", {
         annotation: "backward lineboundary",
         feature_group: 9,
         code: modifySelection
     });
-    self.mappings.add("$", {
+    self.svkjMappings.add("$", {
         annotation: "forward lineboundary",
         feature_group: 9,
         code: modifySelection
@@ -179,7 +179,7 @@ function createVisual() {
         }
     });
 
-    self.mappings.add("o", {
+    self.svkjMappings.add("s", {
         annotation: "Go to Other end of highlighted text",
         feature_group: 9,
         code: function() {
@@ -246,14 +246,14 @@ function createVisual() {
         Hints.flashPressedLink(element);
         dispatchMouseEvent(element, ['click'], shiftKey);
     }
-    self.mappings.add(KeyboardUtils.encodeKeystroke("<Enter>"), {
+    self.svkjMappings.add(KeyboardUtils.encodeKeystroke("<Enter>"), {
         annotation: "Click on node under cursor.",
         feature_group: 9,
         code: function() {
             clickLink(selection.focusNode.parentNode, false);
         }
     });
-    self.mappings.add(KeyboardUtils.encodeKeystroke("<Shift-Enter>"), {
+    self.svkjMappings.add(KeyboardUtils.encodeKeystroke("<Shift-Enter>"), {
         annotation: "Click on node under cursor.",
         feature_group: 9,
         code: function() {
@@ -270,7 +270,7 @@ function createVisual() {
             self.showCursor();
         }
     });
-    self.mappings.add("f", {
+    self.svkjMappings.add("f", {
         annotation: "Forward to next char.",
         feature_group: 9,
         code: function() {
@@ -279,7 +279,7 @@ function createVisual() {
             visualf = 1;
         }
     });
-    self.mappings.add("F", {
+    self.svkjMappings.add(";", {
         annotation: "Backward to next char.",
         feature_group: 9,
         code: function() {
@@ -288,7 +288,7 @@ function createVisual() {
             visualf = -1;
         }
     });
-    self.mappings.add(";", {
+    self.svkjMappings.add("v", {
         annotation: "Repeat latest f, F",
         feature_group: 9,
         code: function() {
@@ -297,7 +297,7 @@ function createVisual() {
             }
         }
     });
-    self.mappings.add(",", {
+    self.svkjMappings.add("a", {
         annotation: "Repeat latest f, F in opposite direction",
         feature_group: 9,
         code: function() {
